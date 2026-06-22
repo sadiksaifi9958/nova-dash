@@ -3,7 +3,7 @@ import { createContext, useContext, useReducer, useEffect } from "react";
 const AppContext = createContext();
 
 const initialState = {
-  theme: "light",
+  theme: localStorage.getItem("theme") || "light",
   user: null,
   isAuthenticated: false,
 };
@@ -30,6 +30,7 @@ export function AppProvider({ children }) {
     } else {
       document.documentElement.classList.remove("dark");
     }
+    localStorage.setItem("theme", state.theme);
   }, [state.theme]);
 
   return (
