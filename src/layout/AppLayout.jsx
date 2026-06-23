@@ -7,27 +7,23 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { NavLink } from "react-router-dom";
-import { LayoutDashboard, Users, BarChart3, Settings } from "lucide-react";
-import { useApp } from "@/context/AppContext";
-import { useNavigate } from "react-router-dom";
-import { LogOut } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import {
+  LayoutDashboard,
+  Users,
+  BarChart3,
+  Settings,
+  User,
+} from "lucide-react";
+
 const pages = [
   { path: "/", label: "Dashboard", icon: <LayoutDashboard /> },
   { path: "analytics", label: "Analytics", icon: <BarChart3 /> },
   { path: "users", label: "Users", icon: <Users /> },
   { path: "settings", label: "Settings", icon: <Settings /> },
+  { path: "profile", label: "Profile", icon: <User /> },
 ];
 
 function AppLayout() {
-  const { dispatch } = useApp();
-  const navigate = useNavigate();
-
-  function handleLogout() {
-    dispatch({ type: "LOGOUT" });
-    navigate("/login");
-  }
-
   return (
     <SidebarProvider>
       <Sidebar>
@@ -43,9 +39,6 @@ function AppLayout() {
               <span>{item.label}</span>
             </NavLink>
           ))}
-          <Button onClick={handleLogout} className="w-fit mx-2 my-4">
-            Logout <LogOut />
-          </Button>
         </SidebarContent>
       </Sidebar>
       <SidebarTrigger />
