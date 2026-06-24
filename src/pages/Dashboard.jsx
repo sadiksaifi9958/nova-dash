@@ -49,7 +49,7 @@ function Dashboard() {
               <XAxis dataKey="month"></XAxis>
               <YAxis></YAxis>
               <Tooltip></Tooltip>
-              <Bar dataKey="revenue"></Bar>
+              <Bar dataKey="revenue" fill="var(--chart-4)"></Bar>
             </BarChart>
           </ResponsiveContainer>
         </CardContent>
