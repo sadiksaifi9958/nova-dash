@@ -34,7 +34,7 @@ function AppLayout() {
               to={item.path}
               key={item.path}
               className={({ isActive }) =>
-                `flex gap-2 items-center w-full px-2 py-4 rounded-md ${isActive ? "bg-secondary font-semibold" : ""}`
+                `flex gap-2 items-center w-full px-2 py-4 rounded-md ${isActive ? "bg-zinc-200 dark:bg-zinc-700 font-semibold" : ""}`
               }
             >
               <span>{item.icon}</span>
