@@ -2,7 +2,7 @@
 
 A modern, responsive admin dashboard built with React and styled with shadcn/ui. NovaDash demonstrates a complete frontend architecture — authentication flow, protected routing, global state management, dark mode, and data visualization — all built from scratch using current React best practices.
 
-🔗 **Live Demo:** [your-vercel-url-here]
+🔗 **Live Demo:** [[click to view live](https://nova-dash-three.vercel.app/)]
 
 ---
 
