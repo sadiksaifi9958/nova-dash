@@ -28,7 +28,7 @@ function AppLayout() {
     <SidebarProvider>
       <Sidebar>
         <SidebarContent className="mx-2">
-          <h2 className="px-2 mt-2">NovaDesk</h2>
+          <h2 className="px-2 mt-2">NovaDash</h2>
           {pages.map((item) => (
             <NavLink
               to={item.path}
