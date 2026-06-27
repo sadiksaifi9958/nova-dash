@@ -11,10 +11,28 @@ function Login() {
   const [password, setPassword] = useState("");
   const { dispatch } = useApp();
   const navigate = useNavigate();
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   function handleLogin() {
-    dispatch({ type: "LOGIN", payload: { email } });
-    navigate("/");
+    let isValid = true;
+    setEmailError("");
+    setPasswordError("");
+
+    if (!email.includes("@") || !email.includes(".")) {
+      setEmailError("Please provide valid email address");
+      isValid = false;
+    }
+
+    if (password.length < 6) {
+      setPasswordError("Password must aleast 6 characters");
+      isValid = false;
+    }
+
+    if (isValid) {
+      dispatch({ type: "LOGIN", payload: { email } });
+      navigate("/");
+    }
   }
   return (
     <div className="flex items-center justify-center min-h-screen bg-muted">
@@ -31,6 +49,7 @@ function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+            <p className="text-sm text-destructive">{emailError}</p>
           </div>
           <div className="space-y-2">
             <Label htmlFor="password">Password</Label>
@@ -40,6 +59,7 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            <p className="text-sm text-destructive">{passwordError}</p>
           </div>
           <Button onClick={handleLogin}>Log in</Button>
         </CardContent>
