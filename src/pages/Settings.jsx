@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 import { useApp } from "../context/AppContext";
 function Settings() {
   const { state, dispatch } = useApp();
@@ -8,9 +9,9 @@ function Settings() {
   }
 
   return (
-    <div>
-      <Button onClick={handleTheme}>Change Theme</Button>
-      <p>Current theme: {state.theme}</p>
+    <div className="flex items-center space-x-2">
+      <Switch id="switch-theme" onClick={handleTheme} />
+      <Label htmlFor="switch-theme">{`Switch to ${state.theme === "dark" ? "light" : "dark"} mode`}</Label>
     </div>
   );
 }

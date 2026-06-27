@@ -38,7 +38,7 @@ function SidebarNav() {
       <SidebarHeader>{state === "expanded" ? "NovaDash" : "ND"}</SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+          <SidebarGroupLabel>Console</SidebarGroupLabel>
           <SidebarMenu className="gap-2">
             {pages.map((item) => (
               <SidebarMenuItem key={item.path}>
